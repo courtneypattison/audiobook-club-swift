@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F12446AD1EC0DE8900054B37 /* AudiobookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12446AC1EC0DE8900054B37 /* AudiobookTests.swift */; };
+		F12446AF1EC0DF8000054B37 /* Audiobook.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12446AE1EC0DF8000054B37 /* Audiobook.swift */; };
 		F125568B1EB8DD8A00B24DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125568A1EB8DD8A00B24DDD /* AppDelegate.swift */; };
 		F125568E1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F125568C1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld */; };
 		F12556901EB8DD8B00B24DDD /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125568F1EB8DD8B00B24DDD /* MasterViewController.swift */; };
@@ -14,7 +16,6 @@
 		F12556951EB8DD8B00B24DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12556931EB8DD8B00B24DDD /* Main.storyboard */; };
 		F12556971EB8DD8B00B24DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12556961EB8DD8B00B24DDD /* Assets.xcassets */; };
 		F125569A1EB8DD8B00B24DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12556981EB8DD8B00B24DDD /* LaunchScreen.storyboard */; };
-		F12556A51EB8DD8B00B24DDD /* AudiobookClubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12556A41EB8DD8B00B24DDD /* AudiobookClubTests.swift */; };
 		F12556B01EB8DD8B00B24DDD /* AudiobookClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F12446AC1EC0DE8900054B37 /* AudiobookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudiobookTests.swift; path = Model/AudiobookTests.swift; sourceTree = "<group>"; };
+		F12446AE1EC0DF8000054B37 /* Audiobook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Audiobook.swift; path = Model/Audiobook.swift; sourceTree = "<group>"; };
 		F12556871EB8DD8A00B24DDD /* AudiobookClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudiobookClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F125568A1EB8DD8A00B24DDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F125568D1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AudiobookClub.xcdatamodel; sourceTree = "<group>"; };
@@ -46,7 +49,6 @@
 		F12556991EB8DD8B00B24DDD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F125569B1EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12556A01EB8DD8B00B24DDD /* AudiobookClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudiobookClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F12556A41EB8DD8B00B24DDD /* AudiobookClubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookClubTests.swift; sourceTree = "<group>"; };
 		F12556A61EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12556AB1EB8DD8B00B24DDD /* AudiobookClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudiobookClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookClubUITests.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				F12556981EB8DD8B00B24DDD /* LaunchScreen.storyboard */,
 				F125569B1EB8DD8B00B24DDD /* Info.plist */,
 				F125568C1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld */,
+				F12446AE1EC0DF8000054B37 /* Audiobook.swift */,
 			);
 			path = AudiobookClub;
 			sourceTree = "<group>";
@@ -116,8 +119,8 @@
 		F12556A31EB8DD8B00B24DDD /* AudiobookClubTests */ = {
 			isa = PBXGroup;
 			children = (
-				F12556A41EB8DD8B00B24DDD /* AudiobookClubTests.swift */,
 				F12556A61EB8DD8B00B24DDD /* Info.plist */,
+				F12446AC1EC0DE8900054B37 /* AudiobookTests.swift */,
 			);
 			path = AudiobookClubTests;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F12446AF1EC0DF8000054B37 /* Audiobook.swift in Sources */,
 				F125568B1EB8DD8A00B24DDD /* AppDelegate.swift in Sources */,
 				F125568E1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld in Sources */,
 				F12556901EB8DD8B00B24DDD /* MasterViewController.swift in Sources */,
@@ -276,7 +280,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12556A51EB8DD8B00B24DDD /* AudiobookClubTests.swift in Sources */,
+				F12446AD1EC0DE8900054B37 /* AudiobookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +519,7 @@
 				F12556B61EB8DD8B00B24DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F12556B71EB8DD8B00B24DDD /* Build configuration list for PBXNativeTarget "AudiobookClubTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +528,7 @@
 				F12556B91EB8DD8B00B24DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F12556BA1EB8DD8B00B24DDD /* Build configuration list for PBXNativeTarget "AudiobookClubUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +537,7 @@
 				F12556BC1EB8DD8B00B24DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
