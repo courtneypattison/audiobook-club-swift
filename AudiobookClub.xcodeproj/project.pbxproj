@@ -107,11 +107,11 @@
 				F125568F1EB8DD8B00B24DDD /* MasterViewController.swift */,
 				F12556911EB8DD8B00B24DDD /* DetailViewController.swift */,
 				F12556931EB8DD8B00B24DDD /* Main.storyboard */,
+				F12446AE1EC0DF8000054B37 /* Audiobook.swift */,
 				F12556961EB8DD8B00B24DDD /* Assets.xcassets */,
 				F12556981EB8DD8B00B24DDD /* LaunchScreen.storyboard */,
 				F125569B1EB8DD8B00B24DDD /* Info.plist */,
 				F125568C1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld */,
-				F12446AE1EC0DF8000054B37 /* Audiobook.swift */,
 			);
 			path = AudiobookClub;
 			sourceTree = "<group>";
