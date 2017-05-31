@@ -51,30 +51,11 @@ struct Audiobook {
         self.title = title
         self.authors = authors
         self.description = description
-        self.genres = removeGenericGenres(genres: genres);
+        self.genres = genres
         self.runtime = runtime
         self.rating = rating
         self.image = image
         self.chapters = chapters
     }
     
-}
-
-// All the audiobooks on archive.org have 'librivox' and 'audiobook'
-// as subjects, so I'm getting rid of them
-func removeGenericGenres(genres: String?) -> String? {
-    let genresArray = genres?.components(separatedBy: " ")
-    var genresWithoutGeneric = ""
-    
-    if let genresArrayUnwrapped = genresArray {
-        for genre in genresArrayUnwrapped {
-            switch genre.lowercased() {
-            case "librivox;", "audiobook;":
-                break
-            default:
-                genresWithoutGeneric += genre + " "
-            }
-        }
-    }
-    return genresWithoutGeneric.trimmingCharacters(in: CharacterSet(charactersIn: "; ")) // Get rid of the semicolon at the end
 }

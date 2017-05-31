@@ -75,18 +75,17 @@ class AudiobookTests: XCTestCase {
         XCTAssertEqual(audiobook.description, description)
     }
     
-    func test_init_givenGenre_setsGenreWithoutGeneric() {
+    func test_init_givenGenre_setsGenre() {
         let genres = "librivox; audiobook; classic; romance;"
-        let genresWithoutGeneric = "classic; romance"
         guard let audiobook = Audiobook(identifier: identifier, genres: genres) else {
             fatalError("Invalid genres")
         }
         
-        XCTAssertEqual(audiobook.genres, genresWithoutGeneric)
+        XCTAssertEqual(audiobook.genres, genres)
     }
     
-    func test_init_givenGenericGenres_setsGenreEmptyString() {
-        let genres = "librivox; audiobook;"
+    func test_init_givenEmptyGenres_setsGenreEmptyString() {
+        let genres = ""
         let genresWithoutGeneric = ""
         guard let audiobook = Audiobook(identifier: identifier, genres: genres) else {
             fatalError("Invalid genres")
