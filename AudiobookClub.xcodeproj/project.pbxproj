@@ -17,6 +17,7 @@
 		F12556971EB8DD8B00B24DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12556961EB8DD8B00B24DDD /* Assets.xcassets */; };
 		F125569A1EB8DD8B00B24DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12556981EB8DD8B00B24DDD /* LaunchScreen.storyboard */; };
 		F12556B01EB8DD8B00B24DDD /* AudiobookClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */; };
+		F12804EE1EDEE7A8003D7553 /* AudiobookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804ED1EDEE7A8003D7553 /* AudiobookTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		F12556AB1EB8DD8B00B24DDD /* AudiobookClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudiobookClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookClubUITests.swift; sourceTree = "<group>"; };
 		F12556B11EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F12804ED1EDEE7A8003D7553 /* AudiobookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudiobookTableViewCell.swift; path = View/AudiobookTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				F125568F1EB8DD8B00B24DDD /* MasterViewController.swift */,
 				F12556911EB8DD8B00B24DDD /* DetailViewController.swift */,
 				F12556931EB8DD8B00B24DDD /* Main.storyboard */,
+				F12804ED1EDEE7A8003D7553 /* AudiobookTableViewCell.swift */,
 				F12446AE1EC0DF8000054B37 /* Audiobook.swift */,
 				F12556961EB8DD8B00B24DDD /* Assets.xcassets */,
 				F12556981EB8DD8B00B24DDD /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				F125568E1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld in Sources */,
 				F12556901EB8DD8B00B24DDD /* MasterViewController.swift in Sources */,
 				F12556921EB8DD8B00B24DDD /* DetailViewController.swift in Sources */,
+				F12804EE1EDEE7A8003D7553 /* AudiobookTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
