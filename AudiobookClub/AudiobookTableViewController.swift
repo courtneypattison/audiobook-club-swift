@@ -1,5 +1,5 @@
 //
-//  MasterViewController.swift
+//  AudiobookTableViewController.swift
 //  AudiobookClub
 //
 //  Created by Courtney Pattison on 2017-05-02.
@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class AudiobookTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
