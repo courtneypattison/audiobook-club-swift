@@ -16,6 +16,8 @@ class AudiobookTableViewCell: UITableViewCell {
     @IBOutlet weak var audiobookAuthorsLabel: UILabel!
     @IBOutlet weak var audiobookRatingLabel: UILabel!
     @IBOutlet weak var audiobookImageView: UIImageView!
+    
+    // MARK: Methods
 
     override func awakeFromNib() {
         super.awakeFromNib()
