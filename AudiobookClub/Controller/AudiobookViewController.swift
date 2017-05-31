@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  AudiobookViewController.swift
 //  AudiobookClub
 //
 //  Created by Courtney Pattison on 2017-05-02.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class AudiobookViewController: UIViewController {
     
     // MARK: Properties
 

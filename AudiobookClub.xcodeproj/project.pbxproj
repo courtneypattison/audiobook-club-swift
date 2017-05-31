@@ -16,7 +16,7 @@
 		F12556B01EB8DD8B00B24DDD /* AudiobookClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */; };
 		F12804F91EDEF74A003D7553 /* AudiobookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F61EDEF74A003D7553 /* AudiobookTableViewCell.swift */; };
 		F12804FA1EDEF74A003D7553 /* AudiobookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F71EDEF74A003D7553 /* AudiobookTableViewController.swift */; };
-		F12804FB1EDEF74A003D7553 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F81EDEF74A003D7553 /* DetailViewController.swift */; };
+		F12804FB1EDEF74A003D7553 /* AudiobookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F81EDEF74A003D7553 /* AudiobookViewController.swift */; };
 		F12804FD1EDEF7F9003D7553 /* Audiobook.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804FC1EDEF7F9003D7553 /* Audiobook.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +53,7 @@
 		F12556B11EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12804F61EDEF74A003D7553 /* AudiobookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobookTableViewCell.swift; sourceTree = "<group>"; };
 		F12804F71EDEF74A003D7553 /* AudiobookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobookTableViewController.swift; sourceTree = "<group>"; };
-		F12804F81EDEF74A003D7553 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		F12804F81EDEF74A003D7553 /* AudiobookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobookViewController.swift; sourceTree = "<group>"; };
 		F12804FC1EDEF7F9003D7553 /* Audiobook.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Audiobook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +156,7 @@
 			children = (
 				F12804F61EDEF74A003D7553 /* AudiobookTableViewCell.swift */,
 				F12804F71EDEF74A003D7553 /* AudiobookTableViewController.swift */,
-				F12804F81EDEF74A003D7553 /* DetailViewController.swift */,
+				F12804F81EDEF74A003D7553 /* AudiobookViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,7 +295,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F12804FB1EDEF74A003D7553 /* DetailViewController.swift in Sources */,
+				F12804FB1EDEF74A003D7553 /* AudiobookViewController.swift in Sources */,
 				F12804F91EDEF74A003D7553 /* AudiobookTableViewCell.swift in Sources */,
 				F125568B1EB8DD8A00B24DDD /* AppDelegate.swift in Sources */,
 				F12804FD1EDEF7F9003D7553 /* Audiobook.swift in Sources */,
