@@ -5,7 +5,6 @@
 //  Created by Courtney Pattison on 2017-05-08.
 //  Copyright © 2017 Courtney Pattison. All rights reserved.
 //
-
 import UIKit
 
 struct Audiobook {
@@ -25,14 +24,14 @@ struct Audiobook {
     // MARK: Initialization
     
     init?(identifier: String,
-         title: String? = nil,
-         authors: [String]? = nil,
-         description: String? = nil,
-         genres: String? = nil,
-         runtime: String? = nil,
-         rating: Double? = nil,
-         image: URL? = nil,
-         chapters: [URL?]? = nil) {
+          title: String? = nil,
+          authors: [String]? = nil,
+          description: String? = nil,
+          genres: String? = nil,
+          runtime: String? = nil,
+          rating: Double? = nil,
+          image: URL? = nil,
+          chapters: [URL?]? = nil) {
         
         // Initialization should fail if there's no identifier
         guard !identifier.isEmpty else {
