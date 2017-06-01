@@ -80,10 +80,12 @@ class AudiobookTableViewController: UITableViewController {
         }
         
         let placeholderImage = UIImage(named: "coverPlaceholder")
+        let roundedCornersFilter = RoundedCornersFilter(radius: 5.0)
         if let imageUrl = audiobook.imageUrl {
-            cell.audiobookImageView.af_setImage(withURL: imageUrl, placeholderImage: placeholderImage)
+            cell.audiobookImageView.af_setImage(withURL: imageUrl, placeholderImage: placeholderImage, filter: roundedCornersFilter)
+            
         } else {
-            cell.audiobookImageView.image = placeholderImage
+            cell.audiobookImageView.image = roundedCornersFilter.filter(placeholderImage!)
         }
         
         return cell
