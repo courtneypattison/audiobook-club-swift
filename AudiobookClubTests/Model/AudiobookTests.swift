@@ -120,14 +120,14 @@ class AudiobookTests: XCTestCase {
         XCTAssertNil(audiobook)
     }
     
-    func test_init_givenImage_setsImage() {
-        let image = URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg")
+    func test_init_givenImageUrl_setsImageUrl() {
+        let imageUrl = URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg")
         guard let audiobook = Audiobook(identifier: identifier,
-                                        image: image) else {
+                                        imageUrl: imageUrl) else {
             fatalError("Invalid image")
         }
         
-        XCTAssertEqual(audiobook.image, image)
+        XCTAssertEqual(audiobook.imageUrl, imageUrl)
     }
     
     func test_init_givenChapterURLs_setsChapterURLs() {

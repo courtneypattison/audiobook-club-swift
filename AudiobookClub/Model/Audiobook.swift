@@ -18,7 +18,7 @@ struct Audiobook {
     let genres: String?
     let runtime: String?
     let rating: Double?
-    let image: URL?
+    let imageUrl: URL?
     let chapters: [URL?]?
     
     // MARK: Initialization
@@ -30,7 +30,7 @@ struct Audiobook {
           genres: String? = nil,
           runtime: String? = nil,
           rating: Double? = nil,
-          image: URL? = nil,
+          imageUrl: URL? = nil,
           chapters: [URL?]? = nil) {
         
         // Initialization should fail if there's no identifier
@@ -53,7 +53,7 @@ struct Audiobook {
         self.genres = genres
         self.runtime = runtime
         self.rating = rating
-        self.image = image
+        self.imageUrl = imageUrl
         self.chapters = chapters
     }
     
