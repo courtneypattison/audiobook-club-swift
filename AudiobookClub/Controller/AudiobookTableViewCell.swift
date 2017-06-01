@@ -14,6 +14,7 @@ class AudiobookTableViewCell: UITableViewCell {
     
     @IBOutlet weak var audiobookTitleLabel: UILabel!
     @IBOutlet weak var audiobookAuthorsLabel: UILabel!
+    @IBOutlet weak var audiobookRuntimeLabel: UILabel!
     @IBOutlet weak var audiobookRatingLabel: UILabel!
     @IBOutlet weak var audiobookImageView: UIImageView!
     

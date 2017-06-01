@@ -58,6 +58,16 @@ class AudiobookTableViewController: UITableViewController {
             cell.audiobookAuthorsLabel.text = "Unknown author(s)"
         }
         
+        if let runtime = audiobook.runtime {
+            let runtimeArray = runtime.components(separatedBy: ":")
+            let hours = runtimeArray[0] + "h"
+            let minutes = runtimeArray[1] + "m"
+            
+            cell.audiobookRuntimeLabel.text = hours + " " + minutes
+        } else {
+            cell.audiobookRuntimeLabel.text = "Unknown runtime"
+        }
+        
         if let rating = audiobook.rating {
             let ratingStr = String(rating)
             if ratingStr.isEmpty {
@@ -66,7 +76,7 @@ class AudiobookTableViewController: UITableViewController {
                 cell.audiobookRatingLabel.text = ratingStr
             }
         } else {
-            cell.audiobookRatingLabel.text = "Unknown rating"
+            cell.audiobookRatingLabel.text = "Not rated"
         }
         
         let placeholderImage = UIImage(named: "coverPlaceholder")
