@@ -1,0 +1,6 @@
+framework module Pods_AudiobookClub {
+  umbrella header "Pods-AudiobookClub-umbrella.h"
+
+  export *
+  module * { export * }
+}
