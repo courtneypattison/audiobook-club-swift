@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import AlamofireImage
 
 class AudiobookTableViewController: UITableViewController {
     
@@ -68,6 +69,13 @@ class AudiobookTableViewController: UITableViewController {
             cell.audiobookRatingLabel.text = "Unknown rating"
         }
         
+        let placeholderImage = UIImage(named: "coverPlaceholder")
+        if let imageUrl = audiobook.imageUrl {
+            cell.audiobookImageView.af_setImage(withURL: imageUrl, placeholderImage: placeholderImage)
+        } else {
+            cell.audiobookImageView.image = placeholderImage
+        }
+        
         return cell
     }
     
@@ -105,7 +113,7 @@ class AudiobookTableViewController: UITableViewController {
                                          description: "Cats are the coolest",
                                          genres: "cats;",
                                          runtime: "10:36:20",
-                                         imageUrl: URL(string: "https://ia600303.us.archive.org/4/items/bonnie_prince_charlie_1503_librivox/bonnie_prince_charlie_1503_thumb.jpg"),
+                                         imageUrl: URL(string: ""),
                                          chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")]) else {
                                             fatalError("Unable to instantiate audiobook2")
         }
