@@ -8,7 +8,10 @@
 
 import UIKit
 import CoreData
+
+import Alamofire
 import AlamofireImage
+import SwiftyJSON
 
 class AudiobookTableViewController: UITableViewController {
     
@@ -28,7 +31,8 @@ class AudiobookTableViewController: UITableViewController {
             audiobookViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? AudiobookViewController
         }
         
-        loadSampleAudiobooks()
+        //loadSampleAudiobooks()
+        loadAudiobooks()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -65,6 +69,39 @@ class AudiobookTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
+    func loadAudiobook(audiobook: JSON) {
+        if let identifier = audiobook["identifier"].string {
+            Alamofire.request("https://archive.org/details/" + identifier + "&output=json").responseJSON { response in
+                if let jsonObject = response.result.value {
+                    let json = JSON(jsonObject)
+                    if let imageStr = json["misc"]["image"].string {
+                        if let audiobookObject = Audiobook(metadata: audiobook, imageUrl: URL(string: imageStr)) {
+                            self.audiobooks.append(audiobookObject)
+                        }
+                    }
+                    self.tableView.reloadData()
+                }
+            }
+        }
+    }
+    
+    func loadAudiobooks() {
+        audiobooks.removeAll()
+        
+        Alamofire.request("https://archive.org/advancedsearch.php?q=collection%3Alibrivoxaudio&fl[]=avg_rating&fl[]=creator&fl[]=identifier&fl[]=title&sort[]=downloads+desc&fl[]=runtime&page=1&output=json").responseJSON { response in
+            if let jsonObject = response.result.value {
+                let json = JSON(jsonObject)
+                let audiobooks = json["response"]["docs"].arrayValue
+                
+                for audiobook in audiobooks {
+                    self.loadAudiobook(audiobook: audiobook)
+                }
+                self.tableView.reloadData()
+            }
+        }
+        
+    }
+    
     func setAudiobookTitleLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
         if let title = audiobook.title, !title.isEmpty {
             cell.audiobookTitleLabel.text = title
@@ -98,7 +135,7 @@ class AudiobookTableViewController: UITableViewController {
             let ratingStr = String(rating)
             
             if ratingStr.isEmpty {
-                cell.audiobookRatingLabel.text = "Unknown rating"
+                cell.audiobookRatingLabel.text = "Not rated"
             } else {
                 cell.audiobookRatingLabel.text = ratingStr
             }

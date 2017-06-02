@@ -7,6 +7,8 @@
 //
 import UIKit
 
+import SwiftyJSON
+
 struct Audiobook {
     
     // MARK: Properties
@@ -18,7 +20,7 @@ struct Audiobook {
     let genres: String?
     let runtime: String?
     let rating: Double?
-    let imageUrl: URL?
+    var imageUrl: URL?
     let chapters: [URL?]?
     
     // MARK: Initialization
@@ -38,13 +40,6 @@ struct Audiobook {
             return nil
         }
         
-        // Initialization should fail if rating isn't between 0 and 5
-        if let rating = rating {
-            guard rating >= 0.0 && rating <= 5.0 else {
-                return nil
-            }
-        }
-        
         // Initialize stored properties
         self.identifier = identifier
         self.title = title
@@ -57,4 +52,24 @@ struct Audiobook {
         self.chapters = chapters
     }
     
+    init?(metadata json: JSON, imageUrl: URL?) {
+        guard let identifier = json["identifier"].string else {
+            return nil
+        }
+        
+        var rating: Double? = nil
+        if let ratingStr = json["avg_rating"].string {
+            rating = Double(ratingStr)
+        }
+        
+        self.identifier = identifier
+        self.title = json["title"].string ?? nil
+        self.authors = [json["creator"].string ?? ""]
+        self.description = nil
+        self.genres = nil
+        self.runtime = json["runtime"].string ?? nil
+        self.rating = rating
+        self.imageUrl = imageUrl
+        self.chapters = nil
+    }
 }

@@ -112,14 +112,6 @@ class AudiobookTests: XCTestCase {
         XCTAssertEqual(audiobook.rating, rating)
     }
     
-    func test_init_givenNegativeRating_initFails() {
-        let rating = -1.00
-        let audiobook = Audiobook(identifier: identifier,
-                                        rating: rating)
-        
-        XCTAssertNil(audiobook)
-    }
-    
     func test_init_givenImageUrl_setsImageUrl() {
         let imageUrl = URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg")
         guard let audiobook = Audiobook(identifier: identifier,
