@@ -46,48 +46,12 @@ class AudiobookTableViewController: UITableViewController {
         
         let audiobook = audiobooks[indexPath.row]
         
-        if let title = audiobook.title, !title.isEmpty {
-            cell.audiobookTitleLabel.text = title
-        } else {
-            cell.audiobookTitleLabel.text = "Unknown title"
-        }
-        
-        if let authors = audiobook.authors?.joined(separator: ", "), !authors.isEmpty {
-            cell.audiobookAuthorsLabel.text = authors
-        } else {
-            cell.audiobookAuthorsLabel.text = "Unknown author(s)"
-        }
-        
-        if let runtime = audiobook.runtime {
-            let runtimeArray = runtime.components(separatedBy: ":")
-            let hours = runtimeArray[0] + "h"
-            let minutes = runtimeArray[1] + "m"
-            
-            cell.audiobookRuntimeLabel.text = hours + " " + minutes
-        } else {
-            cell.audiobookRuntimeLabel.text = "Unknown runtime"
-        }
-        
-        if let rating = audiobook.rating {
-            let ratingStr = String(rating)
-            if ratingStr.isEmpty {
-                cell.audiobookRatingLabel.text = "Unknown rating"
-            } else {
-                cell.audiobookRatingLabel.text = ratingStr
-            }
-        } else {
-            cell.audiobookRatingLabel.text = "Not rated"
-        }
-        
-        let placeholderImage = UIImage(named: "coverPlaceholder")
-        let roundedCornersFilter = RoundedCornersFilter(radius: 5.0)
-        if let imageUrl = audiobook.imageUrl {
-            cell.audiobookImageView.af_setImage(withURL: imageUrl, placeholderImage: placeholderImage, filter: roundedCornersFilter)
-            
-        } else {
-            cell.audiobookImageView.image = roundedCornersFilter.filter(placeholderImage!)
-        }
-        
+        setAudiobookTitleLabelText(audiobook: audiobook, cell: cell)
+        setAudiobookAuthorsLabelText(audiobook: audiobook, cell: cell)
+        setAudiobookRuntimeLabelText(audiobook: audiobook, cell: cell)
+        setAudiobookRatingLabelText(audiobook: audiobook, cell: cell)
+        setAudiobookImageView(audiobook: audiobook, cell: cell)
+
         return cell
     }
     
@@ -100,6 +64,61 @@ class AudiobookTableViewController: UITableViewController {
     }
     
     //MARK: Private Methods
+    
+    func setAudiobookTitleLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
+        if let title = audiobook.title, !title.isEmpty {
+            cell.audiobookTitleLabel.text = title
+        } else {
+            cell.audiobookTitleLabel.text = "Unknown title"
+        }
+    }
+    
+    func setAudiobookAuthorsLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
+        if let authors = audiobook.authors?.joined(separator: ", "), !authors.isEmpty {
+            cell.audiobookAuthorsLabel.text = authors
+        } else {
+            cell.audiobookAuthorsLabel.text = "Unknown author(s)"
+        }
+    }
+    
+    func setAudiobookRuntimeLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
+        if let runtime = audiobook.runtime {
+            let runtimeArray = runtime.components(separatedBy: ":")
+            let hours = runtimeArray[0] + "h"
+            let minutes = runtimeArray[1] + "m"
+            
+            cell.audiobookRuntimeLabel.text = hours + " " + minutes
+        } else {
+            cell.audiobookRuntimeLabel.text = "Unknown runtime"
+        }
+    }
+    
+    func setAudiobookRatingLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
+        if let rating = audiobook.rating {
+            let ratingStr = String(rating)
+            
+            if ratingStr.isEmpty {
+                cell.audiobookRatingLabel.text = "Unknown rating"
+            } else {
+                cell.audiobookRatingLabel.text = ratingStr
+            }
+        } else {
+            cell.audiobookRatingLabel.text = "Not rated"
+        }
+    }
+    
+    func setAudiobookImageView(audiobook: Audiobook, cell: AudiobookTableViewCell) {
+        let placeholderImage = UIImage(named: "coverPlaceholder")
+        let roundedCornersFilter = RoundedCornersFilter(radius: 5.0)
+        
+        if let imageUrl = audiobook.imageUrl {
+            cell.audiobookImageView.af_setImage(withURL: imageUrl, placeholderImage: placeholderImage, filter: roundedCornersFilter)
+            
+        } else {
+            cell.audiobookImageView.image = roundedCornersFilter.filter(placeholderImage!)
+        }
+
+    }
     
     func loadSampleAudiobooks() {
         guard let audiobook1 = Audiobook(identifier: "jane_eyre_ver03_0809_librivox",
