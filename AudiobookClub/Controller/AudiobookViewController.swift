@@ -15,7 +15,7 @@ class AudiobookViewController: UIViewController {
     @IBOutlet weak var audiobookTitleLabel: UILabel!
     @IBOutlet weak var audiobookAuthorsLabel: UILabel!
     @IBOutlet weak var audiobookDescriptionLabel: UILabel!
-    @IBOutlet weak var audiobookGenresLabel: UILabel!
+    @IBOutlet weak var audiobookSubjectsLabel: UILabel!
     @IBOutlet weak var audiobookRuntimeLabel: UILabel!
     @IBOutlet weak var audiobookRatingLabel: UILabel!
     @IBOutlet weak var audiobookImage: UIImageView!
@@ -34,10 +34,10 @@ class AudiobookViewController: UIViewController {
                                 "For more free audio books or to become a volunteer reader, visit <a href=\"http://librivox.org/\" rel=\"nofollow\">LibriVox.org</a>.\n\n" +
                                 "<a href=\"https://archive.org/download/jane_eyre_ver03_0809_librivox/JaneEyrepart1_librivox.m4b\" rel=\"nofollow\">Download M4B Part 1 (255MB)</a>\n" +
             "<a href=\"https://archive.org/download/jane_eyre_ver03_0809_librivox/JaneEyrepart2_librivox.m4b\" rel=\"nofollow\">Download M4B Part 2 (273MB)</a>\n",
-                               genres: "librivox; audiobook; classic; romance;",
+                               subjects: "librivox; audiobook; classic; romance;",
                                runtime: "18:36:29",
                                rating: 5.00,
-                               imageUrl: URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg"),
+                               imageURL: URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg"),
                                chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")]);
     }
 

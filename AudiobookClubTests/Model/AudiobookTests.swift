@@ -76,22 +76,22 @@ class AudiobookTests: XCTestCase {
     }
     
     func test_init_givenGenre_setsGenre() {
-        let genres = "librivox; audiobook; classic; romance;"
-        guard let audiobook = Audiobook(identifier: identifier, genres: genres) else {
-            fatalError("Invalid genres")
+        let subjects = "librivox; audiobook; classic; romance;"
+        guard let audiobook = Audiobook(identifier: identifier, subjects: subjects) else {
+            fatalError("Invalid subjects")
         }
         
-        XCTAssertEqual(audiobook.genres, genres)
+        XCTAssertEqual(audiobook.subjects, subjects)
     }
     
-    func test_init_givenEmptyGenres_setsGenreEmptyString() {
-        let genres = ""
-        let genresWithoutGeneric = ""
-        guard let audiobook = Audiobook(identifier: identifier, genres: genres) else {
-            fatalError("Invalid genres")
+    func test_init_givenEmptysubjects_setsGenreEmptyString() {
+        let subjects = ""
+        let subjectsWithoutGeneric = ""
+        guard let audiobook = Audiobook(identifier: identifier, subjects: subjects) else {
+            fatalError("Invalid subjects")
         }
         
-        XCTAssertEqual(audiobook.genres, genresWithoutGeneric)
+        XCTAssertEqual(audiobook.subjects, subjectsWithoutGeneric)
     }
     
     func test_init_givenRuntime_setsRuntime() {
@@ -112,14 +112,14 @@ class AudiobookTests: XCTestCase {
         XCTAssertEqual(audiobook.rating, rating)
     }
     
-    func test_init_givenImageUrl_setsImageUrl() {
-        let imageUrl = URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg")
+    func test_init_givenimageURL_setsimageURL() {
+        let imageURL = URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg")
         guard let audiobook = Audiobook(identifier: identifier,
-                                        imageUrl: imageUrl) else {
+                                        imageURL: imageURL) else {
             fatalError("Invalid image")
         }
         
-        XCTAssertEqual(audiobook.imageUrl, imageUrl)
+        XCTAssertEqual(audiobook.imageURL, imageURL)
     }
     
     func test_init_givenChapterURLs_setsChapterURLs() {
