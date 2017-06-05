@@ -228,6 +228,7 @@
                                     <outlet property="audiobookRatingLabel" destination="zeG-NM-tzY" id="iou-IR-wGj"/>
                                     <outlet property="audiobookRuntimeLabel" destination="Gws-aG-83J" id="ppK-uD-ehK"/>
                                     <outlet property="audiobookTitleLabel" destination="Bbu-JW-8TK" id="Owq-gq-8xj"/>
+                                    <segue destination="vC3-pB-5Vb" kind="showDetail" identifier="showAudiobookDetail" id="kCy-Ao-LLP"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -237,7 +238,7 @@
                             <outlet property="delegate" destination="7bK-jq-Zjz" id="RA6-mI-bju"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Audiobooks" id="Zdf-7t-Un8"/>
+                    <navigationItem key="navigationItem" id="Zdf-7t-Un8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -263,4 +264,7 @@
     <resources>
         <image name="coverPlaceholder" width="90" height="90"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="kCy-Ao-LLP"/>
+    </inferredMetricsTieBreakers>
 </document>

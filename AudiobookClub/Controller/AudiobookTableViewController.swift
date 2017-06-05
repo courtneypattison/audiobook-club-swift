@@ -6,8 +6,9 @@
 //  Copyright © 2017 Courtney Pattison. All rights reserved.
 //
 
-import UIKit
 import CoreData
+import os.log
+import UIKit
 
 import Alamofire
 import AlamofireImage
@@ -38,6 +39,29 @@ class AudiobookTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         clearsSelectionOnViewWillAppear = splitViewController!.isCollapsed
         super.viewWillAppear(animated)
+    }
+    
+    // MARK: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAudiobookDetail" {
+            guard let audiobookDetailViewController = (segue.destination as! UINavigationController).topViewController as? AudiobookViewController else {
+                fatalError("Unexpected destination: \(segue.destination)")
+            }
+            
+            guard let selectedAudiobookCell = sender as? AudiobookTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            
+            guard let indexPath = tableView.indexPath(for: selectedAudiobookCell) else {
+                fatalError("The selected cell is not being displayed by the table")
+            }
+            
+            let selectedAudiobook = audiobooks[indexPath.row]
+            audiobookDetailViewController.audiobook = selectedAudiobook
+            audiobookDetailViewController.navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
+            audiobookDetailViewController.navigationItem.leftItemsSupplementBackButton = true
+        }
     }
     
     //MARK: Data Source Methods
