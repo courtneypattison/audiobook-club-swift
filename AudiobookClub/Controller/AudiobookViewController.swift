@@ -38,7 +38,7 @@ class AudiobookViewController: UIViewController {
                                runtime: "18:36:29",
                                rating: 5.00,
                                imageURL: URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg"),
-                               chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")]);
+                               chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")!]);
     }
 
     override func viewDidLoad() {

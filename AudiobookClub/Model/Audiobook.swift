@@ -20,8 +20,8 @@ struct Audiobook {
     let subjects: String?
     let runtime: String?
     let rating: Double?
-    var imageURL: URL?
-    let chapters: [URL?]?
+    let imageURL: URL?
+    var chapters: [URL]?
     
     // MARK: Initialization
     
@@ -33,7 +33,7 @@ struct Audiobook {
           runtime: String? = nil,
           rating: Double? = nil,
           imageURL: URL? = nil,
-          chapters: [URL?]? = nil) {
+          chapters: [URL]? = nil) {
         
         // Initialization should fail if there's no identifier
         guard !identifier.isEmpty else {
@@ -52,24 +52,77 @@ struct Audiobook {
         self.chapters = chapters
     }
     
-    init?(metadata json: JSON, imageURL: URL?) {
-        guard let identifier = json["identifier"].string else {
+    init?(data json: JSON) {
+        let identifiers = json["metadata"]["identifier"].arrayValue
+        let titles = json["metadata"]["title"].arrayValue
+        let authors = json["metadata"]["creator"].arrayValue
+        let descriptions = json["metadata"]["description"].arrayValue
+        let subjects = json["metadata"]["subject"].arrayValue
+        let runtimes = json["metadata"]["runtime"].arrayValue
+        
+        if identifiers.count >= 1, let identifier = identifiers[0].string, !identifier.isEmpty {
+            self.identifier = identifier
+        } else {
             return nil
         }
         
-        var rating: Double? = nil
-        if let ratingStr = json["avg_rating"].string {
-            rating = Double(ratingStr)
+        if titles.count >= 1, let title = titles[0].string, !title.isEmpty {
+            self.title = title
+        } else {
+            self.title = nil
         }
         
-        self.identifier = identifier
-        self.title = json["title"].string ?? nil
-        self.authors = [json["creator"].string ?? ""]
-        self.description = nil
-        self.subjects = nil
-        self.runtime = json["runtime"].string ?? nil
-        self.rating = rating
-        self.imageURL = imageURL
-        self.chapters = nil
+        if authors.count >= 1 {
+            self.authors = []
+            for author in authors {
+                if let authorStr = author.string, !authorStr.isEmpty {
+                    self.authors?.append(authorStr)
+                }
+            }
+        } else {
+            self.authors = nil
+        }
+        
+        if descriptions.count >= 1, let description = descriptions[0].string, !description.isEmpty {
+            self.description = description
+        } else {
+            self.description = nil
+        }
+        
+        if subjects.count >= 1, let subjectsStr = subjects[0].string, !subjects.isEmpty {
+            self.subjects = subjectsStr
+        } else {
+            self.subjects = nil
+        }
+        
+        if runtimes.count >= 1, let runtime = runtimes[0].string, !runtime.isEmpty {
+            self.runtime = runtime
+        } else {
+            self.runtime = nil
+        }
+        
+        if let ratingStr = json["reviews"]["info"]["avg_rating"].string, !ratingStr.isEmpty {
+            self.rating = Double(ratingStr)
+        } else {
+            self.rating = nil
+        }
+
+        if let imageURLStr = json["misc"]["image"].string, !imageURLStr.isEmpty {
+            self.imageURL = URL(string: imageURLStr)
+        } else {
+            self.imageURL = nil
+        }
+        
+        self.chapters = []
+        for (file,_):(String, JSON) in json["files"] {
+            if file.hasSuffix(".mp3") {
+                if let url = URL(string: "https://archive.org/download/" + self.identifier + file) {
+                    self.chapters?.append(url)
+                }
+            }
+        }
+        if chapters?.count == 0 {
+            self.chapters = nil
+        }
     }
 }

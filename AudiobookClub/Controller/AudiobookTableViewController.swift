@@ -50,11 +50,28 @@ class AudiobookTableViewController: UITableViewController {
         
         let audiobook = audiobooks[indexPath.row]
         
-        setAudiobookTitleLabelText(audiobook: audiobook, cell: cell)
-        setAudiobookAuthorsLabelText(audiobook: audiobook, cell: cell)
-        setAudiobookRuntimeLabelText(audiobook: audiobook, cell: cell)
-        setAudiobookRatingLabelText(audiobook: audiobook, cell: cell)
-        setAudiobookImageView(audiobook: audiobook, cell: cell)
+        if let title = audiobook.title {
+            cell.audiobookTitleLabel.text = title
+        }
+        if let authors = audiobook.authors?.joined(separator: ", ") {
+            cell.audiobookAuthorsLabel.text = authors
+        }
+        if let runtime = audiobook.runtime {
+            let runtimeArray = runtime.components(separatedBy: ":")
+            if runtimeArray.count == 3 {
+                let hours = runtimeArray[0] + "h"
+                let minutes = runtimeArray[1] + "m"
+                
+                cell.audiobookRuntimeLabel.text = hours + " " + minutes
+            }
+        }
+        if let rating = audiobook.rating {
+            cell.audiobookRatingLabel.text = String(rating)
+        }
+        if let imageURL = audiobook.imageURL {
+            cell.audiobookImageView.af_setImage(withURL: imageURL, filter: RoundedCornersFilter(radius: 5.0))
+            
+        }
 
         return cell
     }
@@ -69,15 +86,14 @@ class AudiobookTableViewController: UITableViewController {
     
     //MARK: Private Methods
     
-    func loadAudiobook(audiobook: JSON) {
-        if let identifier = audiobook["identifier"].string {
+    func loadAudiobook(identifier: JSON) {
+        if let identifier = identifier["identifier"].string {
             Alamofire.request("https://archive.org/details/" + identifier + "&output=json").responseJSON { response in
                 if let jsonObject = response.result.value {
                     let json = JSON(jsonObject)
-                    if let imageStr = json["misc"]["image"].string {
-                        if let audiobookObject = Audiobook(metadata: audiobook, imageURL: URL(string: imageStr)) {
-                            self.audiobooks.append(audiobookObject)
-                        }
+                    if let audiobook = Audiobook(data: json) {
+                        self.audiobooks.append(audiobook)
+                        print(identifier)
                     }
                     self.tableView.reloadData()
                 }
@@ -88,73 +104,17 @@ class AudiobookTableViewController: UITableViewController {
     func loadAudiobooks() {
         audiobooks.removeAll()
         
-        Alamofire.request("https://archive.org/advancedsearch.php?q=collection%3Alibrivoxaudio&fl[]=avg_rating&fl[]=creator&fl[]=identifier&fl[]=title&sort[]=downloads+desc&fl[]=runtime&page=1&output=json").responseJSON { response in
+        Alamofire.request("https://archive.org/advancedsearch.php?q=collection%3Alibrivoxaudio&fl[]=identifier&sort[]=downloads+desc&output=json").responseJSON { response in
             if let jsonObject = response.result.value {
                 let json = JSON(jsonObject)
-                let audiobooks = json["response"]["docs"].arrayValue
+                let identifiers = json["response"]["docs"].arrayValue
                 
-                for audiobook in audiobooks {
-                    self.loadAudiobook(audiobook: audiobook)
+                for identifier in identifiers {
+                    self.loadAudiobook(identifier: identifier)
                 }
                 self.tableView.reloadData()
             }
         }
-        
-    }
-    
-    func setAudiobookTitleLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
-        if let title = audiobook.title, !title.isEmpty {
-            cell.audiobookTitleLabel.text = title
-        } else {
-            cell.audiobookTitleLabel.text = "Unknown title"
-        }
-    }
-    
-    func setAudiobookAuthorsLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
-        if let authors = audiobook.authors?.joined(separator: ", "), !authors.isEmpty {
-            cell.audiobookAuthorsLabel.text = authors
-        } else {
-            cell.audiobookAuthorsLabel.text = "Unknown author(s)"
-        }
-    }
-    
-    func setAudiobookRuntimeLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
-        if let runtime = audiobook.runtime {
-            let runtimeArray = runtime.components(separatedBy: ":")
-            let hours = runtimeArray[0] + "h"
-            let minutes = runtimeArray[1] + "m"
-            
-            cell.audiobookRuntimeLabel.text = hours + " " + minutes
-        } else {
-            cell.audiobookRuntimeLabel.text = "Unknown runtime"
-        }
-    }
-    
-    func setAudiobookRatingLabelText(audiobook: Audiobook, cell: AudiobookTableViewCell) {
-        if let rating = audiobook.rating {
-            let ratingStr = String(rating)
-            
-            if ratingStr.isEmpty {
-                cell.audiobookRatingLabel.text = "Not rated"
-            } else {
-                cell.audiobookRatingLabel.text = ratingStr
-            }
-        } else {
-            cell.audiobookRatingLabel.text = "Not rated"
-        }
-    }
-    
-    func setAudiobookImageView(audiobook: Audiobook, cell: AudiobookTableViewCell) {
-        let placeholderImage = UIImage(named: "coverPlaceholder")
-        let roundedCornersFilter = RoundedCornersFilter(radius: 5.0)
-        
-        if let imageURL = audiobook.imageURL {
-            cell.audiobookImageView.af_setImage(withURL: imageURL, placeholderImage: placeholderImage, filter: roundedCornersFilter)
-            
-        } else {
-            cell.audiobookImageView.image = roundedCornersFilter.filter(placeholderImage!)
-        }
-
     }
     
     func loadSampleAudiobooks() {
@@ -171,7 +131,7 @@ class AudiobookTableViewController: UITableViewController {
                                          runtime: "18:36:29",
                                          rating: 5.00,
                                          imageURL: URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/Jane_Eyre_1002_thumb.jpg"),
-                                         chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")]) else {
+                                         chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")!]) else {
             fatalError("Unable to instantiate audiobook1")
         }
         
@@ -182,7 +142,7 @@ class AudiobookTableViewController: UITableViewController {
                                          subjects: "cats;",
                                          runtime: "10:36:20",
                                          imageURL: URL(string: ""),
-                                         chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")]) else {
+                                         chapters: [URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")!]) else {
                                             fatalError("Unable to instantiate audiobook2")
         }
         
