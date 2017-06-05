@@ -56,7 +56,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-eO-vF9">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subjects" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lkt-eO-vF9">
                                         <rect key="frame" x="0.0" y="76" width="207" height="20.5"/>
                                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -122,10 +122,10 @@
                     <connections>
                         <outlet property="audiobookAuthorsLabel" destination="KOd-HU-jj6" id="537-mL-px2"/>
                         <outlet property="audiobookDescriptionLabel" destination="dMI-WF-fFI" id="MJh-xb-XRl"/>
-                        <outlet property="audiobookGenresLabel" destination="lkt-eO-vF9" id="tOf-o5-Nb4"/>
                         <outlet property="audiobookImage" destination="E9k-aV-COu" id="OIJ-Pd-Lbf"/>
                         <outlet property="audiobookRatingLabel" destination="Or7-sZ-ms8" id="6sp-Yl-dvb"/>
                         <outlet property="audiobookRuntimeLabel" destination="bOH-ca-VTA" id="cqs-OM-Gb8"/>
+                        <outlet property="audiobookSubjectsLabel" destination="lkt-eO-vF9" id="gd5-B4-6D1"/>
                         <outlet property="audiobookTitleLabel" destination="Atu-xN-42c" id="FyJ-w9-om3"/>
                     </connections>
                 </viewController>
