@@ -14,7 +14,6 @@
 		F12556951EB8DD8B00B24DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12556931EB8DD8B00B24DDD /* Main.storyboard */; };
 		F12556971EB8DD8B00B24DDD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F12556961EB8DD8B00B24DDD /* Assets.xcassets */; };
 		F125569A1EB8DD8B00B24DDD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12556981EB8DD8B00B24DDD /* LaunchScreen.storyboard */; };
-		F12556B01EB8DD8B00B24DDD /* AudiobookClubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */; };
 		F12804F91EDEF74A003D7553 /* AudiobookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F61EDEF74A003D7553 /* AudiobookTableViewCell.swift */; };
 		F12804FA1EDEF74A003D7553 /* AudiobookTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F71EDEF74A003D7553 /* AudiobookTableViewController.swift */; };
 		F12804FB1EDEF74A003D7553 /* AudiobookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12804F81EDEF74A003D7553 /* AudiobookViewController.swift */; };
@@ -23,13 +22,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		F12556A11EB8DD8B00B24DDD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F125567F1EB8DD8A00B24DDD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F12556861EB8DD8A00B24DDD;
-			remoteInfo = AudiobookClub;
-		};
-		F12556AC1EB8DD8B00B24DDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F125567F1EB8DD8A00B24DDD /* Project object */;
 			proxyType = 1;
@@ -52,9 +44,6 @@
 		F125569B1EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12556A01EB8DD8B00B24DDD /* AudiobookClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudiobookClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F12556A61EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F12556AB1EB8DD8B00B24DDD /* AudiobookClubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AudiobookClubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudiobookClubUITests.swift; sourceTree = "<group>"; };
-		F12556B11EB8DD8B00B24DDD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F12804F61EDEF74A003D7553 /* AudiobookTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobookTableViewCell.swift; sourceTree = "<group>"; };
 		F12804F71EDEF74A003D7553 /* AudiobookTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobookTableViewController.swift; sourceTree = "<group>"; };
 		F12804F81EDEF74A003D7553 /* AudiobookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudiobookViewController.swift; sourceTree = "<group>"; };
@@ -71,13 +60,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F125569D1EB8DD8B00B24DDD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F12556A81EB8DD8B00B24DDD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -109,7 +91,6 @@
 			children = (
 				F12556891EB8DD8A00B24DDD /* AudiobookClub */,
 				F12556A31EB8DD8B00B24DDD /* AudiobookClubTests */,
-				F12556AE1EB8DD8B00B24DDD /* AudiobookClubUITests */,
 				F12556881EB8DD8A00B24DDD /* Products */,
 				B944E8053B6A5A2CD1276F99 /* Pods */,
 				AF5F5309D884D61015866884 /* Frameworks */,
@@ -121,7 +102,6 @@
 			children = (
 				F12556871EB8DD8A00B24DDD /* AudiobookClub.app */,
 				F12556A01EB8DD8B00B24DDD /* AudiobookClubTests.xctest */,
-				F12556AB1EB8DD8B00B24DDD /* AudiobookClubUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,15 +128,6 @@
 				F12804EF1EDEF4E2003D7553 /* Model */,
 			);
 			path = AudiobookClubTests;
-			sourceTree = "<group>";
-		};
-		F12556AE1EB8DD8B00B24DDD /* AudiobookClubUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F12556AF1EB8DD8B00B24DDD /* AudiobookClubUITests.swift */,
-				F12556B11EB8DD8B00B24DDD /* Info.plist */,
-			);
-			path = AudiobookClubUITests;
 			sourceTree = "<group>";
 		};
 		F12804EF1EDEF4E2003D7553 /* Model */ = {
@@ -226,24 +197,6 @@
 			productReference = F12556A01EB8DD8B00B24DDD /* AudiobookClubTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		F12556AA1EB8DD8B00B24DDD /* AudiobookClubUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F12556BA1EB8DD8B00B24DDD /* Build configuration list for PBXNativeTarget "AudiobookClubUITests" */;
-			buildPhases = (
-				F12556A71EB8DD8B00B24DDD /* Sources */,
-				F12556A81EB8DD8B00B24DDD /* Frameworks */,
-				F12556A91EB8DD8B00B24DDD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F12556AD1EB8DD8B00B24DDD /* PBXTargetDependency */,
-			);
-			name = AudiobookClubUITests;
-			productName = AudiobookClubUITests;
-			productReference = F12556AB1EB8DD8B00B24DDD /* AudiobookClubUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -260,11 +213,6 @@
 						ProvisioningStyle = Automatic;
 					};
 					F125569F1EB8DD8B00B24DDD = {
-						CreatedOnToolsVersion = 8.3.2;
-						ProvisioningStyle = Automatic;
-						TestTargetID = F12556861EB8DD8A00B24DDD;
-					};
-					F12556AA1EB8DD8B00B24DDD = {
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F12556861EB8DD8A00B24DDD;
@@ -286,7 +234,6 @@
 			targets = (
 				F12556861EB8DD8A00B24DDD /* AudiobookClub */,
 				F125569F1EB8DD8B00B24DDD /* AudiobookClubTests */,
-				F12556AA1EB8DD8B00B24DDD /* AudiobookClubUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -303,13 +250,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F125569E1EB8DD8B00B24DDD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F12556A91EB8DD8B00B24DDD /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -388,14 +328,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F12556A71EB8DD8B00B24DDD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F12556B01EB8DD8B00B24DDD /* AudiobookClubUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -403,11 +335,6 @@
 			isa = PBXTargetDependency;
 			target = F12556861EB8DD8A00B24DDD /* AudiobookClub */;
 			targetProxy = F12556A11EB8DD8B00B24DDD /* PBXContainerItemProxy */;
-		};
-		F12556AD1EB8DD8B00B24DDD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F12556861EB8DD8A00B24DDD /* AudiobookClub */;
-			targetProxy = F12556AC1EB8DD8B00B24DDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -589,32 +516,6 @@
 			};
 			name = Release;
 		};
-		F12556BB1EB8DD8B00B24DDD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = AudiobookClubUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.courtneypattison.AudiobookClubUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = AudiobookClub;
-			};
-			name = Debug;
-		};
-		F12556BC1EB8DD8B00B24DDD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				INFOPLIST_FILE = AudiobookClubUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.courtneypattison.AudiobookClubUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
-				TEST_TARGET_NAME = AudiobookClub;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -641,15 +542,6 @@
 			buildConfigurations = (
 				F12556B81EB8DD8B00B24DDD /* Debug */,
 				F12556B91EB8DD8B00B24DDD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F12556BA1EB8DD8B00B24DDD /* Build configuration list for PBXNativeTarget "AudiobookClubUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F12556BB1EB8DD8B00B24DDD /* Debug */,
-				F12556BC1EB8DD8B00B24DDD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
