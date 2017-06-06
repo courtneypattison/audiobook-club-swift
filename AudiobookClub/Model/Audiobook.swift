@@ -18,7 +18,7 @@ struct Audiobook {
     let authors: [String]?
     let description: String?
     let subjects: String?
-    let runtime: String?
+    let runtime: Runtime?
     let rating: Double?
     let imageURL: URL?
     var chapters: [URL]?
@@ -30,7 +30,7 @@ struct Audiobook {
           authors: [String]? = nil,
           description: String? = nil,
           subjects: String? = nil,
-          runtime: String? = nil,
+          runtime: Runtime? = nil,
           rating: Double? = nil,
           imageURL: URL? = nil,
           chapters: [URL]? = nil) {
@@ -96,7 +96,7 @@ struct Audiobook {
         }
         
         if runtimes.count >= 1, let runtime = runtimes[0].string, !runtime.isEmpty {
-            self.runtime = runtime
+            self.runtime = Runtime(string: runtime)
         } else {
             self.runtime = nil
         }

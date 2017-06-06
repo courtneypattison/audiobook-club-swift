@@ -32,7 +32,7 @@ class AudiobookViewController: UIViewController {
             audiobookAuthorsLabel.text = audiobook.authors?.joined(separator: ", ")
             audiobookDescriptionLabel.text = audiobook.description ?? ""
             audiobookSubjectsLabel.text = audiobook.subjects ?? ""
-            audiobookRuntimeLabel.text = audiobook.runtime ?? ""
+            audiobookRuntimeLabel.text = audiobook.runtime?.description()
             if let imageURL = audiobook.imageURL {
                 audiobookImage.af_setImage(withURL: imageURL)
             }

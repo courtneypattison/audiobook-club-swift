@@ -18,10 +18,6 @@ class AudiobookTests: XCTestCase {
         identifier = "jane_eyre_ver03_0809_librivox"
     }
     
-    override func tearDown() {
-        super.tearDown()
-    }
-    
     func test_init_givenIdentifier_setsIdentifier() {
         guard let audiobook = Audiobook(identifier: identifier) else {
             fatalError("Invalid identifier");
@@ -95,12 +91,14 @@ class AudiobookTests: XCTestCase {
     }
     
     func test_init_givenRuntime_setsRuntime() {
-        let runtime = "18:36:29"
+        let runtime = Runtime(string: "18:36:29")
         guard let audiobook = Audiobook(identifier: identifier, runtime: runtime) else {
             fatalError("Invalid runtime")
         }
         
-        XCTAssertEqual(audiobook.runtime, runtime)
+        XCTAssertEqual(audiobook.runtime?.hours, runtime?.hours)
+        XCTAssertEqual(audiobook.runtime?.minutes, runtime?.minutes)
+        XCTAssertEqual(audiobook.runtime?.seconds, runtime?.seconds)
     }
     
     func test_init_givenRating_setsRating() {
@@ -126,7 +124,7 @@ class AudiobookTests: XCTestCase {
         let url = URL(string: "https://archive.org/download/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3")
         let chapters = [url]
         guard let audiobook = Audiobook(identifier: identifier,
-                                        chapters: chapters) else {
+                                        chapters: chapters as? [URL]) else {
             fatalError("Invalid chapters")
         }
         

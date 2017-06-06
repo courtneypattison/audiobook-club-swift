@@ -80,13 +80,7 @@ class AudiobookTableViewController: UITableViewController {
             cell.audiobookAuthorsLabel.text = authors
         }
         if let runtime = audiobook.runtime {
-            let runtimeArray = runtime.components(separatedBy: ":")
-            if runtimeArray.count == 3 {
-                let hours = runtimeArray[0] + "h"
-                let minutes = runtimeArray[1] + "m"
-                
-                cell.audiobookRuntimeLabel.text = hours + " " + minutes
-            }
+            cell.audiobookRuntimeLabel.text = runtime.description()
         }
         if let rating = audiobook.rating {
             cell.audiobookRatingLabel.text = String(rating)
