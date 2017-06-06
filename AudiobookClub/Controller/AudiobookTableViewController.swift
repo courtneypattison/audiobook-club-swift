@@ -112,14 +112,17 @@ class AudiobookTableViewController: UITableViewController {
     func loadAudiobook(identifier: JSON) {
         if let identifier = identifier["identifier"].string {
             Alamofire.request("https://archive.org/details/" + identifier + "&output=json").responseJSON { response in
-                if let jsonObject = response.result.value {
-                    let json = JSON(jsonObject)
+                switch response.result {
+                case .success(let value):
+                    let json = JSON(value)
                     if let audiobook = Audiobook(data: json) {
                         self.audiobooks.append(audiobook)
-                        print(identifier)
                     }
                     self.tableView.reloadData()
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
                 }
+                
             }
         }
     }
@@ -128,14 +131,17 @@ class AudiobookTableViewController: UITableViewController {
         audiobooks.removeAll()
         
         Alamofire.request("https://archive.org/advancedsearch.php?q=collection%3Alibrivoxaudio&fl[]=identifier&sort[]=downloads+desc&output=json").responseJSON { response in
-            if let jsonObject = response.result.value {
-                let json = JSON(jsonObject)
+            switch response.result {
+            case .success(let value):
+                let json = JSON(value)
                 let identifiers = json["response"]["docs"].arrayValue
                 
                 for identifier in identifiers {
                     self.loadAudiobook(identifier: identifier)
                 }
                 self.tableView.reloadData()
+            case .failure(let error):
+                fatalError(error.localizedDescription)
             }
         }
     }
