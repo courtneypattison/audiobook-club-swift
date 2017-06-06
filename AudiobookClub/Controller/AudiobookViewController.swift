@@ -34,14 +34,19 @@ class AudiobookViewController: UIViewController {
             audiobookSubjectsLabel.text = audiobook.subjects ?? ""
             audiobookRuntimeLabel.text = audiobook.runtime?.description()
             if let imageURL = audiobook.imageURL {
-                audiobookImage.af_setImage(withURL: imageURL)
+                var imageStr = String(describing: imageURL)
+                imageStr = imageStr.replacingOccurrences(of: "_thumb", with: "")
+                print(imageStr)
+                if let fullImageUrl = URL(string: imageStr) {
+                    audiobookImage.af_setImage(withURL: fullImageUrl)
+                }
             }
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
         configureView()
     }
 
@@ -51,6 +56,9 @@ class AudiobookViewController: UIViewController {
     }
     
     // Mark: Actions
+    
+    @IBAction func playAudiobook(_ sender: UIButton) {
+    }
     
     @IBAction func downloadAudiobook(_ sender: UIButton) {
     }
