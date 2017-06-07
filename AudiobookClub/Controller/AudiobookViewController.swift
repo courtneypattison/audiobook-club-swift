@@ -34,6 +34,8 @@ class AudiobookViewController: UIViewController {
                 if let fullImageURL = URL(string: imageStr) {
                     let processor = RoundCornerImageProcessor(cornerRadius: 5)
                     audiobookImage.kf.setImage(with: fullImageURL, options: [.processor(processor)])
+                } else {
+                    audiobookImage.image = UIImage(named: "coverPlaceholder")
                 }
             }
             if let title = audiobook.title {

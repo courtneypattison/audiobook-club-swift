@@ -75,19 +75,33 @@ class AudiobookTableViewController: UITableViewController {
         
         if let title = audiobook.title {
             cell.audiobookTitleLabel.text = title
+        } else {
+            cell.audiobookTitleLabel.text = "Unknown title"
         }
+        
         if let authors = audiobook.authors?.joined(separator: ", ") {
             cell.audiobookAuthorsLabel.text = authors
+        } else {
+            cell.audiobookAuthorsLabel.text = "Unknown author(s)"
         }
+        
         if let runtime = audiobook.runtime {
             cell.audiobookRuntimeLabel.text = runtime.description()
+        } else {
+            cell.audiobookRuntimeLabel.text = "Unknown runtime"
         }
+        
         if let rating = audiobook.rating {
             cell.audiobookRatingLabel.text = String(rating)
+        } else {
+            cell.audiobookRatingLabel.text = "Not rated"
         }
+        
         if let imageURL = audiobook.imageURL {
             let processor = RoundCornerImageProcessor(cornerRadius: 5)
             cell.audiobookImageView.kf.setImage(with: imageURL, options: [.processor(processor)])
+        } else {
+            cell.audiobookImageView.image = UIImage(named: "coverPlaceholder")
         }
 
         return cell
