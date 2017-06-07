@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="adm-Bs-fqg">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="507.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="549.33333333333337"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E9k-aV-COu">
                                                 <rect key="frame" x="57" y="8" width="300" height="300"/>
@@ -53,7 +53,7 @@
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="f7l-r8-MuK">
-                                                <rect key="frame" x="8" y="316" width="398" height="183.33333333333331"/>
+                                                <rect key="frame" x="8" y="316" width="398" height="225.33333333333337"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rNg-sr-sZk">
                                                         <rect key="frame" x="0.0" y="0.0" width="398" height="82.666666666666686"/>
@@ -203,12 +203,19 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMI-WF-fFI">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dMI-WF-fFI">
                                                         <rect key="frame" x="0.0" y="167.66666666666669" width="398" height="15.666666666666629"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oSY-v6-rxg">
+                                                        <rect key="frame" x="0.0" y="195.33333333333331" width="398" height="30.000000000000057"/>
+                                                        <state key="normal" title="more"/>
+                                                        <connections>
+                                                            <action selector="moreDescription:" destination="JEX-9P-axG" eventType="touchUpInside" id="K02-mK-8Mu"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -251,6 +258,7 @@
                         <outlet property="audiobookStarRating" destination="8GZ-TX-Sta" id="5aT-4X-zZq"/>
                         <outlet property="audiobookSubjectsLabel" destination="lkt-eO-vF9" id="gd5-B4-6D1"/>
                         <outlet property="audiobookTitleLabel" destination="Atu-xN-42c" id="FyJ-w9-om3"/>
+                        <outlet property="moreUIButton" destination="oSY-v6-rxg" id="AFi-j2-cVF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>

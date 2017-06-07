@@ -23,6 +23,7 @@ class AudiobookViewController: UIViewController {
     @IBOutlet weak var audiobookStarRating: CosmosView!
     @IBOutlet weak var audiobookRatingLabel: UILabel!
     @IBOutlet weak var audiobookImage: UIImageView!
+    @IBOutlet weak var moreUIButton: UIButton!
     
     var audiobook: Audiobook?
     
@@ -59,6 +60,7 @@ class AudiobookViewController: UIViewController {
             }
             if let description = audiobook.description {
                 audiobookDescriptionLabel.text = description
+                audiobookDescriptionLabel.numberOfLines = 7
             }
         }
     }
@@ -80,6 +82,10 @@ class AudiobookViewController: UIViewController {
     }
     
     @IBAction func downloadAudiobook(_ sender: UIButton) {
+    }
+    @IBAction func moreDescription(_ sender: UIButton) {
+        audiobookDescriptionLabel.numberOfLines = 0
+        moreUIButton.isHidden = true
     }
 }
 
