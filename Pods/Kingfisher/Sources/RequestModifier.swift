@@ -1,7 +1,10 @@
 //
-//  Image.swift
+//  RequestModifier.swift
+//  Kingfisher
 //
-//  Copyright (c) 2015-2016 Alamofire Software Foundation (http://alamofire.org/)
+//  Created by Wei Wang on 2016/09/05.
+//
+//  Copyright (c) 2017 Wei Wang <onevcat@gmail.com>
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -20,14 +23,31 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
-//
 
 import Foundation
 
-#if os(iOS) || os(tvOS) || os(watchOS)
-import UIKit
-public typealias Image = UIImage
-#elseif os(macOS)
-import Cocoa
-public typealias Image = NSImage
-#endif
+/// Request modifier of image downloader.
+public protocol ImageDownloadRequestModifier {
+    func modified(for request: URLRequest) -> URLRequest?
+}
+
+struct NoModifier: ImageDownloadRequestModifier {
+    static let `default` = NoModifier()
+    private init() {}
+    func modified(for request: URLRequest) -> URLRequest? {
+        return request
+    }
+}
+
+public struct AnyModifier: ImageDownloadRequestModifier {
+    
+    let block: (URLRequest) -> URLRequest?
+    
+    public func modified(for request: URLRequest) -> URLRequest? {
+        return block(request)
+    }
+    
+    public init(modify: @escaping (URLRequest) -> URLRequest? ) {
+        block = modify
+    }
+}

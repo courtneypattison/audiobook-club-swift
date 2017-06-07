@@ -4,6 +4,6 @@ use_frameworks!
 
 target 'AudiobookClub' do
     pod 'Alamofire', '~> 4.4'
-    pod 'AlamofireImage', '~> 3.1'
+    pod 'Kingfisher', '~> 3.0'
     pod 'SwiftyJSON'
 end

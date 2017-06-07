@@ -8,7 +8,7 @@
 
 import UIKit
 
-import AlamofireImage
+import Kingfisher
 
 class AudiobookViewController: UIViewController {
     
@@ -31,8 +31,9 @@ class AudiobookViewController: UIViewController {
             if let imageURL = audiobook.imageURL {
                 var imageStr = String(describing: imageURL)
                 imageStr = imageStr.replacingOccurrences(of: "_thumb", with: "")
-                if let fullImageUrl = URL(string: imageStr) {
-                    audiobookImage.af_setImage(withURL: fullImageUrl, filter: RoundedCornersFilter(radius: 5.0))
+                if let fullImageURL = URL(string: imageStr) {
+                    let processor = RoundCornerImageProcessor(cornerRadius: 5)
+                    audiobookImage.kf.setImage(with: fullImageURL, options: [.processor(processor)])
                 }
             }
             if let title = audiobook.title {

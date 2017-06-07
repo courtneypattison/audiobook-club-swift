@@ -11,7 +11,7 @@ import os.log
 import UIKit
 
 import Alamofire
-import AlamofireImage
+import Kingfisher
 import SwiftyJSON
 
 class AudiobookTableViewController: UITableViewController {
@@ -86,7 +86,8 @@ class AudiobookTableViewController: UITableViewController {
             cell.audiobookRatingLabel.text = String(rating)
         }
         if let imageURL = audiobook.imageURL {
-            cell.audiobookImageView.af_setImage(withURL: imageURL, filter: RoundedCornersFilter(radius: 5.0))
+            let processor = RoundCornerImageProcessor(cornerRadius: 5)
+            cell.audiobookImageView.kf.setImage(with: imageURL, options: [.processor(processor)])
         }
 
         return cell
