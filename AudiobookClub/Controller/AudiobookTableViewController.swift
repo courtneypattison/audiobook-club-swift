@@ -92,7 +92,7 @@ class AudiobookTableViewController: UITableViewController {
         if let runtime = audiobook.runtime {
             cell.audiobookRuntimeLabel.text = runtime.description()
         } else {
-            cell.audiobookRuntimeLabel.text = "Unknown runtime"
+            cell.audiobookRuntimeLabel.text = "No runtime"
         }
         
         if let rating = audiobook.rating {

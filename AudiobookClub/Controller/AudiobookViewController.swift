@@ -21,7 +21,6 @@ class AudiobookViewController: UIViewController {
     @IBOutlet weak var audiobookSubjectsLabel: UILabel!
     @IBOutlet weak var audiobookRuntimeLabel: UILabel!
     @IBOutlet weak var audiobookStarRating: CosmosView!
-    @IBOutlet weak var audiobookRatingLabel: UILabel!
     @IBOutlet weak var audiobookImage: UIImageView!
     @IBOutlet weak var moreUIButton: UIButton!
     
@@ -53,7 +52,6 @@ class AudiobookViewController: UIViewController {
             }
             if let rating = audiobook.rating {
                 audiobookStarRating.rating = rating
-                audiobookRatingLabel.text = String(rating)
             }
             if let subjects = audiobook.subjects {
                 audiobookSubjectsLabel.text = subjects
