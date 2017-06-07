@@ -84,13 +84,14 @@ struct Audiobook {
         }
         
         if descriptions.count >= 1, let description = descriptions[0].string, !description.isEmpty {
-            self.description = description
+            self.description = cleanDescription(description: description)
         } else {
             self.description = nil
         }
         
         if subjects.count >= 1, let subjectsStr = subjects[0].string, !subjects.isEmpty {
-            self.subjects = subjectsStr
+            
+            self.subjects = cleanSubjects(subjects: subjectsStr)
         } else {
             self.subjects = nil
         }
@@ -125,4 +126,19 @@ struct Audiobook {
             self.chapters = nil
         }
     }
+}
+
+// Mark: Helper functions
+
+func cleanDescription(description: String) -> String {
+    return description.replacingOccurrences(of: "(<[^>]+>|\n\nFor further information,[^\n]+|\n\nFor more[^\n]+)", with: "", options: .regularExpression)
+        .replacingOccurrences(of: "\n(Download )?M4B[^\n]+", with: "", options: .regularExpression)
+        .replacingOccurrences(of: "\n\n+", with: "\n\n", options: .regularExpression)
+        .trimmingCharacters(in: CharacterSet(charactersIn: "\n"))
+}
+
+func cleanSubjects(subjects: String) -> String {
+    return subjects.replacingOccurrences(of: "(audiobooks?|librivox|audio book|audio);?", with: "", options: [.regularExpression, .caseInsensitive])
+        .replacingOccurrences(of: "; *", with: ", ", options: .regularExpression)
+        .trimmingCharacters(in: CharacterSet(charactersIn: " ,"))
 }

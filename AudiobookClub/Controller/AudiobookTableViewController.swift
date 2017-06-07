@@ -87,7 +87,6 @@ class AudiobookTableViewController: UITableViewController {
         }
         if let imageURL = audiobook.imageURL {
             cell.audiobookImageView.af_setImage(withURL: imageURL, filter: RoundedCornersFilter(radius: 5.0))
-            
         }
 
         return cell

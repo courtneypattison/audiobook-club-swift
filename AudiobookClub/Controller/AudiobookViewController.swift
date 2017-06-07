@@ -28,18 +28,30 @@ class AudiobookViewController: UIViewController {
     
     func configureView() {
         if let audiobook = audiobook {
-            audiobookTitleLabel.text = audiobook.title ?? ""
-            audiobookAuthorsLabel.text = audiobook.authors?.joined(separator: ", ")
-            audiobookDescriptionLabel.text = audiobook.description ?? ""
-            audiobookSubjectsLabel.text = audiobook.subjects ?? ""
-            audiobookRuntimeLabel.text = audiobook.runtime?.description()
             if let imageURL = audiobook.imageURL {
                 var imageStr = String(describing: imageURL)
                 imageStr = imageStr.replacingOccurrences(of: "_thumb", with: "")
-                print(imageStr)
                 if let fullImageUrl = URL(string: imageStr) {
-                    audiobookImage.af_setImage(withURL: fullImageUrl)
+                    audiobookImage.af_setImage(withURL: fullImageUrl, filter: RoundedCornersFilter(radius: 5.0))
                 }
+            }
+            if let title = audiobook.title {
+                audiobookTitleLabel.text = title
+            }
+            if let authors = audiobook.authors?.joined(separator: ", ") {
+                audiobookAuthorsLabel.text = authors
+            }
+            if let runtime = audiobook.runtime {
+                audiobookRuntimeLabel.text = runtime.description()
+            }
+            if let rating = audiobook.rating {
+                audiobookRatingLabel.text = String(rating)
+            }
+            if let subjects = audiobook.subjects {
+                audiobookSubjectsLabel.text = subjects
+            }
+            if let description = audiobook.description {
+                audiobookDescriptionLabel.text = description
             }
         }
     }
@@ -62,7 +74,5 @@ class AudiobookViewController: UIViewController {
     
     @IBAction func downloadAudiobook(_ sender: UIButton) {
     }
-    
-
 }
 

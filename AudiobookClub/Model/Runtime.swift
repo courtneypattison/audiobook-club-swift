@@ -19,7 +19,7 @@ struct Runtime {
     // Mark: Initialization
     
     init?(string runtime: String) {
-        let runtimeArray = runtime.components(separatedBy: ":")
+        let runtimeArray = runtime.components(separatedBy: CharacterSet(charactersIn: ":."))
         if runtimeArray.count == 3 {
             if let hours = Int(runtimeArray[0]),
                let minutes = Int(runtimeArray[1]),
