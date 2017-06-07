@@ -92,9 +92,9 @@ class AudiobookTableViewController: UITableViewController {
         }
         
         if let rating = audiobook.rating {
-            cell.audiobookRatingLabel.text = String(rating)
+            cell.audiobookStarRating.rating = rating
         } else {
-            cell.audiobookRatingLabel.text = "Not rated"
+            cell.audiobookStarRating.rating = 0
         }
         
         if let imageURL = audiobook.imageURL {
