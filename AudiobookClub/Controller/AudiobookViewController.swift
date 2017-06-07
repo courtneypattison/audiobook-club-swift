@@ -30,6 +30,10 @@ class AudiobookViewController: UIViewController {
     
     func configureView() {
         if let audiobook = audiobook {
+            if let title = audiobook.title {
+                navigationItem.title = title
+                audiobookTitleLabel.text = title
+            }
             if let imageURL = audiobook.imageURL {
                 var imageStr = String(describing: imageURL)
                 imageStr = imageStr.replacingOccurrences(of: "_thumb", with: "")
@@ -39,9 +43,6 @@ class AudiobookViewController: UIViewController {
                 } else {
                     audiobookImage.image = UIImage(named: "coverPlaceholder")
                 }
-            }
-            if let title = audiobook.title {
-                audiobookTitleLabel.text = title
             }
             if let authors = audiobook.authors?.joined(separator: ", ") {
                 audiobookAuthorsLabel.text = authors

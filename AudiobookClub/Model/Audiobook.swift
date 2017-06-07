@@ -138,7 +138,7 @@ func cleanDescription(description: String) -> String {
 }
 
 func cleanSubjects(subjects: String) -> String {
-    return subjects.replacingOccurrences(of: "(audiobooks?|librivox|audio book|audio);?", with: "", options: [.regularExpression, .caseInsensitive])
+    return subjects.replacingOccurrences(of: "(audio( ?books?)?|librivox);?", with: "", options: [.regularExpression, .caseInsensitive])
         .replacingOccurrences(of: "; *", with: ", ", options: .regularExpression)
         .trimmingCharacters(in: CharacterSet(charactersIn: " ,"))
 }

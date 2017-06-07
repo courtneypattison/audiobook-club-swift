@@ -241,7 +241,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Audiobook" id="mOI-FS-AaM"/>
+                    <navigationItem key="navigationItem" id="mOI-FS-AaM"/>
                     <connections>
                         <outlet property="audiobookAuthorsLabel" destination="KOd-HU-jj6" id="537-mL-px2"/>
                         <outlet property="audiobookDescriptionLabel" destination="dMI-WF-fFI" id="MJh-xb-XRl"/>
