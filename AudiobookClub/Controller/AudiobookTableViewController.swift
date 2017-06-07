@@ -20,7 +20,11 @@ class AudiobookTableViewController: UITableViewController {
 
     var audiobookViewController: AudiobookViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
+    
     var audiobooks = [Audiobook]()
+    
+    var pageCount = 1
+    var loadingAudiobooks = false
     
     //MARK: Methods
 
@@ -103,6 +107,11 @@ class AudiobookTableViewController: UITableViewController {
         } else {
             cell.audiobookImageView.image = UIImage(named: "coverPlaceholder")
         }
+        
+        if !loadingAudiobooks, indexPath.row == audiobooks.count - 1 {
+            pageCount += 1
+            loadAudiobooks()
+        }
 
         return cell
     }
@@ -136,17 +145,17 @@ class AudiobookTableViewController: UITableViewController {
     }
     
     func loadAudiobooks() {
-        audiobooks.removeAll()
-        
-        Alamofire.request("https://archive.org/advancedsearch.php?q=collection%3Alibrivoxaudio&fl[]=identifier&sort[]=downloads+desc&output=json").responseJSON { response in
+        Alamofire.request("https://archive.org/advancedsearch.php?q=collection%3Alibrivoxaudio&fl[]=identifier&sort[]=downloads+desc&rows=50&page=" + String(describing: pageCount) + "&output=json&save=yes").responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
                 let identifiers = json["response"]["docs"].arrayValue
+                self.loadingAudiobooks = true
                 
                 for identifier in identifiers {
                     self.loadAudiobook(identifier: identifier)
                 }
+                self.loadingAudiobooks = false
                 self.tableView.reloadData()
             case .failure(let error):
                 fatalError(error.localizedDescription)
