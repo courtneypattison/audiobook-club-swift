@@ -22,7 +22,9 @@ class AudiobookViewController: UIViewController {
     @IBOutlet weak var audiobookRuntimeLabel: UILabel!
     @IBOutlet weak var audiobookStarRating: CosmosView!
     @IBOutlet weak var audiobookImage: UIImageView!
-    @IBOutlet weak var moreUIButton: UIButton!
+    @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var downloadButton: UIButton!
+    @IBOutlet weak var moreButton: UIButton!
     
     var audiobook: Audiobook?
     
@@ -34,6 +36,7 @@ class AudiobookViewController: UIViewController {
                 navigationItem.title = title
                 audiobookTitleLabel.text = title
             }
+            
             if let imageURL = audiobook.imageURL {
                 var imageStr = String(describing: imageURL)
                 imageStr = imageStr.replacingOccurrences(of: "_thumb", with: "")
@@ -44,18 +47,27 @@ class AudiobookViewController: UIViewController {
                     audiobookImage.image = UIImage(named: "coverPlaceholder")
                 }
             }
+            
+            let blue = UIColor(red: 0, green: 122 / 255.0, blue: 1, alpha: 1.0)
+            playButton.setBackgroundColor(color: blue, forState: .highlighted)
+            downloadButton.setBackgroundColor(color: blue, forState: .highlighted)
+            
             if let authors = audiobook.authors?.joined(separator: ", ") {
                 audiobookAuthorsLabel.text = authors
             }
+            
             if let runtime = audiobook.runtime {
                 audiobookRuntimeLabel.text = runtime.description()
             }
+            
             if let rating = audiobook.rating {
                 audiobookStarRating.rating = rating
             }
+            
             if let subjects = audiobook.subjects {
                 audiobookSubjectsLabel.text = subjects
             }
+            
             if let description = audiobook.description {
                 audiobookDescriptionLabel.text = description
                 audiobookDescriptionLabel.numberOfLines = 7
@@ -77,13 +89,15 @@ class AudiobookViewController: UIViewController {
     // Mark: Actions
     
     @IBAction func playAudiobook(_ sender: UIButton) {
+        print("stream")
     }
     
     @IBAction func downloadAudiobook(_ sender: UIButton) {
     }
+    
     @IBAction func moreDescription(_ sender: UIButton) {
         audiobookDescriptionLabel.numberOfLines = 0
-        moreUIButton.isHidden = true
+        moreButton.isHidden = true
     }
 }
 

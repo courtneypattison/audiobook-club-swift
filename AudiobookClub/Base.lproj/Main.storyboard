@@ -94,10 +94,13 @@
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSZ-Px-JMN">
                                                                         <rect key="frame" x="2" y="52" width="99" height="26"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                         <inset key="contentEdgeInsets" minX="22" minY="5" maxX="23" maxY="5"/>
                                                                         <state key="normal" title="STREAM">
                                                                             <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                         </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -114,11 +117,16 @@
                                                                             <action selector="playAudiobook:" destination="JEX-9P-axG" eventType="touchUpInside" id="02A-ZE-Vt7"/>
                                                                         </connections>
                                                                     </button>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7e-3u-Ksi">
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7e-3u-Ksi">
                                                                         <rect key="frame" x="2" y="86" width="99" height="26"/>
-                                                                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="13"/>
+                                                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="13"/>
                                                                         <inset key="contentEdgeInsets" minX="11" minY="5" maxX="11" maxY="5"/>
-                                                                        <state key="normal" title="DOWNLOAD"/>
+                                                                        <state key="normal" title="DOWNLOAD">
+                                                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                        </state>
+                                                                        <state key="highlighted">
+                                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        </state>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                 <real key="value" value="5"/>
@@ -234,7 +242,9 @@
                         <outlet property="audiobookStarRating" destination="8GZ-TX-Sta" id="5aT-4X-zZq"/>
                         <outlet property="audiobookSubjectsLabel" destination="lkt-eO-vF9" id="gd5-B4-6D1"/>
                         <outlet property="audiobookTitleLabel" destination="Atu-xN-42c" id="FyJ-w9-om3"/>
-                        <outlet property="moreUIButton" destination="oSY-v6-rxg" id="AFi-j2-cVF"/>
+                        <outlet property="downloadButton" destination="t7e-3u-Ksi" id="vf3-5w-kQi"/>
+                        <outlet property="moreButton" destination="oSY-v6-rxg" id="Mph-9W-vfZ"/>
+                        <outlet property="playButton" destination="XSZ-Px-JMN" id="uGq-aH-jJJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
