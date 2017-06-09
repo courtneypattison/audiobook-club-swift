@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6C2C3B3F119F97701D774C8A /* Pods_AudiobookClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E761D85570B6E417FEF1C6A5 /* Pods_AudiobookClub.framework */; };
-		F12446AD1EC0DE8900054B37 /* AudiobookTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12446AC1EC0DE8900054B37 /* AudiobookTests.swift */; };
+		9EE3568B6DB608C8BF98FE80 /* Pods_AudiobookClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1445D1B8840E29E5F794B8 /* Pods_AudiobookClub.framework */; };
 		F125568B1EB8DD8A00B24DDD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F125568A1EB8DD8A00B24DDD /* AppDelegate.swift */; };
 		F125568E1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F125568C1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodeld */; };
 		F12556951EB8DD8B00B24DDD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F12556931EB8DD8B00B24DDD /* Main.storyboard */; };
@@ -36,10 +35,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3565D6E8AA5FF539AC780B85 /* Pods-AudiobookClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudiobookClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub.debug.xcconfig"; sourceTree = "<group>"; };
-		96FBBA7A3F6ADA6B44FB4CE1 /* Pods-AudiobookClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudiobookClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub.release.xcconfig"; sourceTree = "<group>"; };
-		E761D85570B6E417FEF1C6A5 /* Pods_AudiobookClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudiobookClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F12446AC1EC0DE8900054B37 /* AudiobookTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AudiobookTests.swift; path = Model/AudiobookTests.swift; sourceTree = "<group>"; };
+		1E1445D1B8840E29E5F794B8 /* Pods_AudiobookClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudiobookClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C68019CA3B3F43F67D59BB9 /* Pods-AudiobookClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudiobookClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub.debug.xcconfig"; sourceTree = "<group>"; };
+		5D46227C18E5428D3A773130 /* Pods_AudiobookClubTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AudiobookClubTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B9BC7F5D5FB9F8CBBE36269 /* Pods-AudiobookClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AudiobookClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub.release.xcconfig"; sourceTree = "<group>"; };
 		F12556871EB8DD8A00B24DDD /* AudiobookClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudiobookClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F125568A1EB8DD8A00B24DDD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F125568D1EB8DD8B00B24DDD /* AudiobookClub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AudiobookClub.xcdatamodel; sourceTree = "<group>"; };
@@ -65,7 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C2C3B3F119F97701D774C8A /* Pods_AudiobookClub.framework in Frameworks */,
+				9EE3568B6DB608C8BF98FE80 /* Pods_AudiobookClub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,19 +78,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		AF5F5309D884D61015866884 /* Frameworks */ = {
+		6E47B16304C2C5026A6D93BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				E761D85570B6E417FEF1C6A5 /* Pods_AudiobookClub.framework */,
+				1E1445D1B8840E29E5F794B8 /* Pods_AudiobookClub.framework */,
+				5D46227C18E5428D3A773130 /* Pods_AudiobookClubTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		B944E8053B6A5A2CD1276F99 /* Pods */ = {
+		E0F2D178C40F466132400D25 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3565D6E8AA5FF539AC780B85 /* Pods-AudiobookClub.debug.xcconfig */,
-				96FBBA7A3F6ADA6B44FB4CE1 /* Pods-AudiobookClub.release.xcconfig */,
+				3C68019CA3B3F43F67D59BB9 /* Pods-AudiobookClub.debug.xcconfig */,
+				9B9BC7F5D5FB9F8CBBE36269 /* Pods-AudiobookClub.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -102,8 +102,8 @@
 				F12556891EB8DD8A00B24DDD /* AudiobookClub */,
 				F12556A31EB8DD8B00B24DDD /* AudiobookClubTests */,
 				F12556881EB8DD8A00B24DDD /* Products */,
-				B944E8053B6A5A2CD1276F99 /* Pods */,
-				AF5F5309D884D61015866884 /* Frameworks */,
+				E0F2D178C40F466132400D25 /* Pods */,
+				6E47B16304C2C5026A6D93BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,7 +144,6 @@
 		F12804EF1EDEF4E2003D7553 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				F12446AC1EC0DE8900054B37 /* AudiobookTests.swift */,
 				F19AB5C01EE6D52D0084D2CF /* RuntimeTests.swift */,
 			);
 			name = Model;
@@ -186,12 +185,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F12556B41EB8DD8B00B24DDD /* Build configuration list for PBXNativeTarget "AudiobookClub" */;
 			buildPhases = (
-				BC065BB9465E1DC04FAD50DC /* [CP] Check Pods Manifest.lock */,
+				71739D0495A408ADD7029677 /* [CP] Check Pods Manifest.lock */,
 				F12556831EB8DD8A00B24DDD /* Sources */,
 				F12556841EB8DD8A00B24DDD /* Frameworks */,
 				F12556851EB8DD8A00B24DDD /* Resources */,
-				4F6D9C58AD10D28C331729FA /* [CP] Embed Pods Frameworks */,
-				E8528737A5638E101C67CCC0 /* [CP] Copy Pods Resources */,
+				AB7671C680F328872AD07C42 /* [CP] Embed Pods Frameworks */,
+				A0BA2B7AA49BF17DBB2AFB70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -282,22 +281,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F6D9C58AD10D28C331729FA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC065BB9465E1DC04FAD50DC /* [CP] Check Pods Manifest.lock */ = {
+		71739D0495A408ADD7029677 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -312,7 +296,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		E8528737A5638E101C67CCC0 /* [CP] Copy Pods Resources */ = {
+		A0BA2B7AA49BF17DBB2AFB70 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -325,6 +309,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB7671C680F328872AD07C42 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AudiobookClub/Pods-AudiobookClub-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -352,7 +351,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19AB5C11EE6D52D0084D2CF /* RuntimeTests.swift in Sources */,
-				F12446AD1EC0DE8900054B37 /* AudiobookTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +474,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -485,7 +484,7 @@
 		};
 		F12556B51EB8DD8B00B24DDD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3565D6E8AA5FF539AC780B85 /* Pods-AudiobookClub.debug.xcconfig */;
+			baseConfigurationReference = 3C68019CA3B3F43F67D59BB9 /* Pods-AudiobookClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -502,7 +501,7 @@
 		};
 		F12556B61EB8DD8B00B24DDD /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 96FBBA7A3F6ADA6B44FB4CE1 /* Pods-AudiobookClub.release.xcconfig */;
+			baseConfigurationReference = 9B9BC7F5D5FB9F8CBBE36269 /* Pods-AudiobookClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
