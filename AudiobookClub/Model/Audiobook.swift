@@ -25,33 +25,6 @@ struct Audiobook {
     
     // MARK: Initialization
     
-    init?(identifier: String,
-          title: String? = nil,
-          authors: [String]? = nil,
-          description: String? = nil,
-          subjects: String? = nil,
-          runtime: Runtime? = nil,
-          rating: Double? = nil,
-          imageURL: URL? = nil,
-          chapters: [URL]? = nil) {
-        
-        // Initialization should fail if there's no identifier
-        guard !identifier.isEmpty else {
-            return nil
-        }
-        
-        // Initialize stored properties
-        self.identifier = identifier
-        self.title = title
-        self.authors = authors
-        self.description = description
-        self.subjects = subjects
-        self.runtime = runtime
-        self.rating = rating
-        self.imageURL = imageURL
-        self.chapters = chapters
-    }
-    
     init?(data json: JSON) {
         let identifiers = json["metadata"]["identifier"].arrayValue
         let titles = json["metadata"]["title"].arrayValue
