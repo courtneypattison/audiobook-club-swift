@@ -6,6 +6,8 @@
 //  Copyright © 2017 Courtney Pattison. All rights reserved.
 //
 
+import AVFoundation
+import AVKit
 import UIKit
 
 import Cosmos
@@ -81,15 +83,20 @@ class AudiobookViewController: UIViewController {
         configureView()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    // Mark: Segues
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "audiobookPlayback" {
+            let audioPlayerViewController = segue.destination as! AVPlayerViewController
+            if let audioURL = URL(string: "https://ia802702.us.archive.org/18/items/jane_eyre_ver03_0809_librivox/janeeyre_01_bronte.mp3") {
+                audioPlayerViewController.player = AVPlayer(url: audioURL)
+            }
+        }
     }
     
     // Mark: Actions
     
     @IBAction func playAudiobook(_ sender: UIButton) {
-        print("stream")
     }
     
     @IBAction func downloadAudiobook(_ sender: UIButton) {
@@ -99,5 +106,7 @@ class AudiobookViewController: UIViewController {
         audiobookDescriptionLabel.numberOfLines = 0
         moreButton.isHidden = true
     }
+    
+    
 }
 

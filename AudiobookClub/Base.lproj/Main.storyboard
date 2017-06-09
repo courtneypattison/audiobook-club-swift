@@ -115,6 +115,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                         <connections>
                                                                             <action selector="playAudiobook:" destination="JEX-9P-axG" eventType="touchUpInside" id="02A-ZE-Vt7"/>
+                                                                            <segue destination="ZRL-NQ-hah" kind="presentation" identifier="audiobookPlayback" id="U3P-2b-8Ms"/>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7e-3u-Ksi">
@@ -250,6 +251,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJe-Yq-33r" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="707.24637681159425" y="127.98913043478262"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="RAe-M6-yJE">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="ZRL-NQ-hah" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hKG-Gs-Qsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1566" y="133"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Nki-YV-4Qg">
